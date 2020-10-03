@@ -8,7 +8,7 @@ zip:
 	mkdir -p system/bin/
 	for bin in charch cparch lsarch mkarch rmarch unarch ; \
 	do \
-		git show master:bin/$$bin > system/bin/$$bin ; \
+		curl -Ls https://raw.githubusercontent.com/tytydraco/ChArch/master/bin/$$bin > system/bin/$$bin ; \
 		sed -i -e 's|!/usr/bin/env bash|!/system/bin/sh|g' system/bin/$$bin ; \
 		sed -i -e 's|\$$HOME/charch|/data/unencrypted/charch|' system/bin/$$bin ; \
 		sed -i '3iexport PATH="/sbin/.magisk/busybox:\$$PATH"' system/bin/$$bin ; \
