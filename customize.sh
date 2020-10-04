@@ -11,7 +11,7 @@ ui_print " * Fetching the latest module from GitHub..."
 for bin in charch cparch lsarch mkarch rmarch unarch
 do
 	ui_print " * Fetching $bin..."
-	wget -O "$MODPATH/system/bin/$bin" "https://raw.githubusercontent.com/tytydraco/ChArch/master/$bin"
+	wget -O "$MODPATH/system/bin/$bin" "http://raw.githubusercontent.com/tytydraco/ChArch/master/$bin"
 done
 
 ui_print " * Patching for use on Android..."
